@@ -1,0 +1,25 @@
+[gd_resource type="SpriteFrames" load_steps=4 format=3 uid="uid://bwcxqui8orlxb"]
+
+[ext_resource type="Texture2D" uid="uid://cbhsd508ilcn4" path="res://Sprites/character and tileset/Dungeon_Character.png" id="1_fuld1"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_64gxq"]
+atlas = ExtResource("1_fuld1")
+region = Rect2(96, 32, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2tlkb"]
+atlas = ExtResource("1_fuld1")
+region = Rect2(0, 32, 16, 16)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 5.0,
+"texture": SubResource("AtlasTexture_64gxq")
+}, {
+"duration": 5.0,
+"texture": SubResource("AtlasTexture_2tlkb")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]

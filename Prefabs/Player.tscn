@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://x767ugmefq24"]
+
+[ext_resource type="SpriteFrames" uid="uid://bwcxqui8orlxb" path="res://Sprites/Animations/PlayerFrames.tres" id="1_whffi"]
+[ext_resource type="Script" path="res://Prefabs/Player.gd" id="2_jicxm"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0qbew"]
+size = Vector2(16, 16)
+
+[node name="Player" type="Area2D"]
+script = ExtResource("2_jicxm")
+
+[node name="PlayerBody" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_0qbew")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = ExtResource("1_whffi")
+autoplay = "default"
