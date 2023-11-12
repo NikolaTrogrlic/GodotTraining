@@ -1,6 +1,6 @@
-[gd_scene load_steps=7 format=3 uid="uid://qr58enoyskpk"]
+[gd_scene load_steps=7 format=3 uid="uid://7uihy1odf6vl"]
 
-[ext_resource type="Script" path="res://Prefabs/AnimatedFont.gd" id="1_dwkby"]
+[ext_resource type="Script" path="res://Scripts/AnimatedFont.gd" id="1_tdn0n"]
 [ext_resource type="FontFile" uid="uid://wqnh5nl0re3c" path="res://Fonts/m5x7.ttf" id="1_xpuv3"]
 
 [sub_resource type="Animation" id="Animation_n33vp"]
@@ -43,7 +43,7 @@ _data = {
 size = Vector2(15.5, 15.5)
 
 [node name="AnimatedText" type="Node2D"]
-script = ExtResource("1_dwkby")
+script = ExtResource("1_tdn0n")
 
 [node name="Label" type="Label" parent="."]
 offset_right = 40.0

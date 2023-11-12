@@ -1,17 +1,39 @@
-[gd_scene load_steps=4 format=3 uid="uid://x767ugmefq24"]
+[gd_scene load_steps=5 format=3 uid="uid://x767ugmefq24"]
 
+[ext_resource type="Script" path="res://Scripts/Player.gd" id="1_p3fwf"]
 [ext_resource type="SpriteFrames" uid="uid://bwcxqui8orlxb" path="res://Sprites/Animations/PlayerFrames.tres" id="1_whffi"]
-[ext_resource type="Script" path="res://Prefabs/Player.gd" id="2_jicxm"]
+
+[sub_resource type="GDScript" id="GDScript_laqy0"]
+script/source = "extends RayCast2D
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta):
+	pass
+"
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0qbew"]
 size = Vector2(16, 16)
 
-[node name="Player" type="Area2D"]
-script = ExtResource("2_jicxm")
-
-[node name="PlayerBody" type="CollisionShape2D" parent="."]
-shape = SubResource("RectangleShape2D_0qbew")
+[node name="Player" type="Node2D"]
+script = ExtResource("1_p3fwf")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = ExtResource("1_whffi")
 autoplay = "default"
+frame = 1
+frame_progress = 0.644067
+
+[node name="PlayerLookRaycast" type="RayCast2D" parent="."]
+target_position = Vector2(0, 24)
+script = SubResource("GDScript_laqy0")
+
+[node name="PlayerBody" type="Area2D" parent="."]
+
+[node name="PlayerBodyShape" type="CollisionShape2D" parent="PlayerBody"]
+shape = SubResource("RectangleShape2D_0qbew")

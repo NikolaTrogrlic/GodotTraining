@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=3 uid="uid://b2xtsrgw1b8iy"]
+
+[ext_resource type="Texture2D" uid="uid://ddaym8umlt6ku" path="res://Sprites/character and tileset/Dungeon_Tileset.png" id="1_wf1ej"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_l7644"]
+size = Vector2(16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2hqbr"]
+atlas = ExtResource("1_wf1ej")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_bdqab"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2hqbr")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Wall" type="StaticBody2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_l7644")
+
+[node name="Sprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_bdqab")
